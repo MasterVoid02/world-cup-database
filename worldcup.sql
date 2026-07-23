@@ -255,3 +255,4 @@ ALTER TABLE ONLY public.games
 --
 -- PostgreSQL database dump complete
 --
+
