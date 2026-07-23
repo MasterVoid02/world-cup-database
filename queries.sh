@@ -2,8 +2,6 @@
 
 PSQL="psql --username=freecodecamp --dbname=worldcup --no-align --tuples-only -c"
 
-# Do not change code above this line. Use the PSQL variable above to query your database.
-
 echo -e "\nTotal number of goals in all games from winning teams:"
 echo "$($PSQL "SELECT SUM(winner_goals) FROM games")"
 
@@ -28,8 +26,6 @@ echo "$($PSQL "SELECT COUNT(*) FROM games WHERE winner_goals > 2")"
 echo -e "\nWinner of the 2018 tournament team name:"
 echo "$($PSQL "SELECT name FROM teams INNER JOIN games ON teams.team_id = games.winner_id WHERE year = 2018 AND round = 'Final'")"
 
-# Another option would be to use a UNION
-# The pre-set description should also describe an ORDER BY for tests to pass
 echo -e "\nList of teams who played in the 2014 'Eighth-Final' round:"
 echo "$($PSQL "SELECT name FROM teams INNER JOIN games ON teams.team_id = winner_id OR teams.team_id = games.opponent_id WHERE year = 2014 AND round = 'Eighth-Final' ORDER BY name")"
 
