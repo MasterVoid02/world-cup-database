@@ -7,11 +7,7 @@ else
   PSQL="psql --username=freecodecamp --dbname=worldcup -t --no-align -c"
 fi
 
-# Do not change code above this line. Use the PSQL variable above to query your database.
-
 # Start afresh for every test.
-# Although checks partially negate the need for this,
-# It would need much checking for each game
 $PSQL "TRUNCATE games, teams"
 
 # Reading the data into a while loop
